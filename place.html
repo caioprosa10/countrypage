@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Country page — Rio de Janeiro, Brazil: facts and weather." />
+  <meta name="robots" content="index,follow" />
+  <title>Rio de Janeiro — Brazil | W03 Country Page</title>
+
+  <!-- Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/place.css" />
+  <script defer src="scripts/place.js"></script>
+</head>
+<body>
+  <header class="banner">
+    <h1 class="title">Rio de Janeiro</h1>
+  </header>
+
+  <main>
+    <!-- HERO with srcset (WebP) -->
+    <section class="hero" aria-label="Hero image of Rio de Janeiro">
+      <picture>
+        <source srcset="images/hero-large.webp" media="(min-width: 768px)" type="image/webp" />
+        <img src="images/hero-small.webp" alt="Scenic view of Rio de Janeiro coastline" width="1600" height="900" />
+      </picture>
+
+      <!-- Overlay cards (desktop) -->
+      <article class="card data-card" aria-labelledby="data-title">
+        <h2 id="data-title">Data</h2>
+        <dl>
+          <div><dt>Country</dt><dd>Brazil</dd></div>
+          <div><dt>State</dt><dd>Rio de Janeiro</dd></div>
+          <div><dt>Area</dt><dd>1,221 km²</dd></div>
+          <div><dt>Population</dt><dd>6.7 million</dd></div>
+          <div><dt>Language</dt><dd>Portuguese</dd></div>
+          <div><dt>Currency</dt><dd>Brazilian Real (R$)</dd></div>
+          <div><dt>Timezone</dt><dd>UTC−3</dd></div>
+          <div><dt>Calling Code</dt><dd>+55</dd></div>
+          <div><dt>Internet TLD</dt><dd>.br</dd></div>
+        </dl>
+      </article>
+
+      <article class="card weather-card" aria-labelledby="weather-title">
+        <h2 id="weather-title">Weather</h2>
+        <!-- SVG aparece só no mobile; no desktop é oculto via CSS -->
+        <img class="wx-icon" src="images/weather.svg" alt="Weather icon" width="64" height="64" />
+        <ul class="wx-list">
+          <li><span>Temperature:</span> <span id="temp">8</span> <span>°C</span></li>
+          <li><span>Conditions:</span> <span id="cond">Partly Cloudy</span></li>
+          <li><span>Wind:</span> <span id="wind">12</span> <span>km/h</span></li>
+          <li><span>Wind Chill:</span> <span id="windchill">—</span></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Stacked cards for small view -->
+    <section class="stacked">
+      <article class="card data-card" aria-labelledby="data-title-sm">
+        <h2 id="data-title-sm">Data</h2>
+        <dl>
+          <div><dt>Country</dt><dd>Brazil</dd></div>
+          <div><dt>State</dt><dd>Rio de Janeiro</dd></div>
+          <div><dt>Area</dt><dd>1,221 km²</dd></div>
+          <div><dt>Population</dt><dd>6.7 million</dd></div>
+          <div><dt>Language</dt><dd>Portuguese</dd></div>
+          <div><dt>Currency</dt><dd>Brazilian Real (R$)</dd></div>
+          <div><dt>Timezone</dt><dd>UTC−3</dd></div>
+          <div><dt>Calling Code</dt><dd>+55</dd></div>
+          <div><dt>Internet TLD</dt><dd>.br</dd></div>
+        </dl>
+      </article>
+
+      <article class="card weather-card" aria-labelledby="weather-title-sm">
+        <h2 id="weather-title-sm">Weather</h2>
+        <img class="wx-icon" src="images/weather.svg" alt="Weather icon" width="64" height="64" />
+        <ul class="wx-list">
+          <li><span>Temperature:</span> <span id="temp-sm">8</span> <span>°C</span></li>
+          <li><span>Conditions:</span> <span id="cond-sm">Partly Cloudy</span></li>
+          <li><span>Wind:</span> <span id="wind-sm">12</span> <span>km/h</span></li>
+          <li><span>Wind Chill:</span> <span id="windchill-sm">—</span></li>
+        </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>©<span id="year"></span> • Caio Palladino Da Rosa • Rio de Janeiro, Brazil</p>
+    <p>Last Modified: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
