@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true">
+<defs>
+<linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#FFD166"/>
+<stop offset="1" stop-color="#F9A826"/>
+</linearGradient>
+</defs>
+<!-- Sun -->
+<circle cx="22" cy="22" r="10" fill="url(#g)"/>
+<!-- Rays -->
+<g stroke="#F59E0B" stroke-width="2" stroke-linecap="round">
+<path d="M22 4v8M22 32v8M4 22h8M32 22h8M9 9l6 6M29 29l6 6M9 35l6-6M29 15l6-6"/>
+</g>
+<!-- Cloud -->
+<g fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5">
+<ellipse cx="42" cy="38" rx="14" ry="9"/>
+<ellipse cx="32" cy="40" rx="9" ry="6.5"/>
+</g>
+<!-- Drizzle -->
+<g stroke="#60A5FA" stroke-width="2" stroke-linecap="round">
+<path d="M34 50l-2 6M42 50l-2 6M50 50l-2 6"/>
+</g>
+</svg>
