@@ -1,0 +1,94 @@
+/* CSS Variables */
+:root {
+  --green: #006C3B;   /* Brazil flag green */
+  --yellow: #F7C548;  /* Brazil flag yellow */
+  --blue: #0B4F9F;    /* Brazil flag blue */
+  --bg: #f3fff7;      /* soft background */
+  --text: #1f2937;    /* slate-800 */
+  --muted: #374151;   /* slate-700 for stronger contrast */
+  --card: #ffffff;
+  --shadow: 0 10px 30px rgba(0,0,0,.12);
+}
+
+/* Base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+h1,h2 { font-family: "Merriweather", Georgia, serif; margin: 0 0 .5rem; }
+
+.banner {
+  background: var(--blue);
+  border-bottom: 8px solid var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 1.25rem .75rem;
+}
+.title { font-size: clamp(1.5rem, 3vw + 1rem, 2.5rem); letter-spacing: .5px; }
+
+main { max-width: 1100px; margin: 0 auto; }
+
+/* ===== Hero FULL-BLEED ===== */
+.hero {
+  position: relative;
+  /* faz a seção ocupar a largura da viewport mesmo dentro do container central */
+  margin-inline: calc(50% - 50vw);
+}
+.hero picture, .hero img { display:block; }
+.hero picture img {
+  width: 100vw;    /* ocupa toda a largura visível */
+  height: 60vh;    /* mesma altura usada no desktop */
+  object-fit: cover;
+}
+
+/* Cards */
+.card { background: var(--card); border-radius: 12px; box-shadow: var(--shadow); padding: 1rem 1.25rem; }
+.card h2 { color: var(--green); font-size: 1.5rem; }
+
+/* Data list styles */
+.card dl { display:grid; grid-template-columns: 1fr 1fr; gap:.5rem 1rem; margin:0; }
+.card dl div { display: contents; }
+.card dt { color: var(--muted); font-weight: 700; }
+.card dd { margin:0; }
+
+/* Weather */
+.weather-card { text-align: left; }
+.wx-icon { width: 60px; height:auto; display:block; margin:.5rem auto; }
+.wx-list { list-style: none; padding: 0; margin:.5rem 0 0; }
+.wx-list li { display:flex; justify-content: space-between; padding:.25rem 0; border-bottom:1px dashed #e5e7eb; }
+.wx-list li:last-child { border-bottom:none; }
+
+/* Stacked (mobile) */
+.stacked { display:grid; gap: 1rem; padding: 1rem; }
+
+/* Footer */
+.site-footer { text-align:center; background: var(--blue); color:#fff; padding: 1rem; margin-top: 2rem; border-top: 8px solid var(--green); }
+.site-footer p { margin:.25rem 0; }
+
+/* ===== Desktop ===== */
+@media (min-width: 900px) {
+  /* altura mínima para manter o visual do wireframe */
+  .hero { min-height: 60vh; }
+
+  .data-card, .weather-card {
+    position:absolute;
+    backdrop-filter: blur(6px);
+    background: rgba(255,255,255,.88);
+  }
+
+  .data-card { left: 3%; bottom: 10%; max-width: 360px; }
+  .weather-card { right: 3%; bottom: 10%; max-width: 280px; }
+
+  .stacked { display:none; }
+
+  /* SVG não deve aparecer no desktop (rubrico) */
+  .weather-card .wx-icon { display: none; }
+
+  /* Emoticon no desktop via pseudo-elemento */
+  .weather-card h2::after { content: " ⛅"; font-size: 1.25em; }
+}
